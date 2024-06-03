@@ -1,4 +1,4 @@
-# Casper Sorts: Pool-based Perpetual Swap
+# Casper Shorts: Pool-based Perpetual Swap
 
 <div class="authors">
     Maciej Zielinski
@@ -12,18 +12,19 @@ for a high number of transactions.
 </p>
 
 ## 1. Introduction
+
 Perpetual swap is a contract between two parties to bet on the price of an
 asset. One party goes long and the other goes short. The core idea of the system
 is that whenever the price of the underlying asset changes, the system
-rebalances the liquidity between long and short positions. Deposits are 
-represented $LONG$ and $SHORT$ tokens. System requires an oracle to provide the
-price of the underlying asset.
+rebalances the liquidity between long and short positions. Deposits are
+represented as $LONG$ and $SHORT$ tokens. System requires an oracle to provide
+the price of the underlying asset.
 
 ## 2. Definitions
 
 Smart contracts used to repesent the system:
-- $csCSPR$ - Wrapped Casper CSPR token, used an underlying asset in the
-  perpetual swap. Later referred aa _asset_.
+- $csCSPR$ - Wrapped Casper CSPR token, used as an underlying asset in the
+  perpetual swap. Later referred as _asset_.
 - $LONG$ - Token that represents the long position,
 - $SHORT$ - Token that represents the short position,
 - $Market$ - Contract that manages deposits, withdrawals, price oracle and
@@ -101,7 +102,7 @@ new amount of the position and the new total supply of the token.
 $$ T(i+1) = T(i) - W $$
 $$ \Delta L(i+1) = L(i) \times (1 - \frac{T(i)}{T(i+1)}) $$
 $$ L(i+1) = L(i) - \Delta L $$
-
+<!-- 
 ## 6. System Implementation
 
 ### 6.1 Price Rebalance Sequence Diagram
@@ -113,6 +114,7 @@ sequenceDiagram
     User->>Market: update_price(price)
     Market->>Market: rebalance(price)
 ```
+-->
 
 ## Appendix 1 - Examples
 
